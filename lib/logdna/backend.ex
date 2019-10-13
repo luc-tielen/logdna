@@ -83,7 +83,7 @@ defmodule Logdna.Backend do
   defp init_state(config) do
     level = Keyword.get(config, :level)
     metadata = Keyword.get(config, :metadata, [])
-    max_buffer = Keyword.get(config, :max_buffer, 2)
+    max_buffer = Keyword.get(config, :max_buffer, 10)
     format = Logger.Formatter.compile(Keyword.get(config, :format))
 
     %__MODULE__{

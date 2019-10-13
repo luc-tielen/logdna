@@ -20,6 +20,7 @@ end
 
 ```elixir
 config :logdna, :config,
+  max_buffer: <desired_buffer_size>, # default is 10
   app: System.get_env("LOGDNA_APP") || "app",
   ingestion_key: System.get_env("LOGDNA_KEY"),
   hostname: System.get_env("LOGDNA_HOSTNAME") || "localhost"
