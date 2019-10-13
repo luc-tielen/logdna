@@ -7,12 +7,30 @@ defmodule Logdna.MixProject do
       version: "0.0.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      description: description(),
+      docs: [extras: ["README.md"]],
+      source_url: "https://github.com/Waasi/logdna"
     ]
   end
 
   def application do
     [extra_applications: [:logger]]
+  end
+
+  defp description do
+    "Logdna Logger Backend"
+  end
+
+  defp package do
+    [
+      name: :logdna,
+      files: ["lib", "config", "mix.exs", "README*"],
+      maintainers: ["Eric Santos"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/Waasi/logdna"}
+    ]
   end
 
   defp deps do
