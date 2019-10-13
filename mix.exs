@@ -18,7 +18,8 @@ defmodule Logdna.MixProject do
   defp deps do
     [
       {:jason, "~> 1.1"},
-      {:httpoison, "~> 1.6"}
+      {:httpoison, "~> 1.6"},
+      {:mock, "~> 0.3.0", only: :test}
     ]
   end
 end
