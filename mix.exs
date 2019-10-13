@@ -37,7 +37,8 @@ defmodule Logdna.MixProject do
     [
       {:jason, "~> 1.1"},
       {:httpoison, "~> 1.6"},
-      {:mock, "~> 0.3.0", only: :test}
+      {:mock, "~> 0.3.0", only: :test},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 end
