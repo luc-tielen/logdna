@@ -1,6 +1,7 @@
 # Logdna
+[![Build Status](https://travis-ci.org/Waasi/logdna.svg?branch=master)](https://travis-ci.org/Waasi/logdna)
 
-[WIP] LogDNA Logger Backend for Elixir Apps
+LogDNA Logger Backend
 
 ## Installation
 
