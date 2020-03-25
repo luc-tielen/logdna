@@ -8,7 +8,7 @@ defmodule Logdna.Log do
       line: nil,
       level: nil
   ]
-  
+
   def new({level, line, metadata}) do
     meta = transform_metadata(metadata)
 
@@ -47,6 +47,10 @@ defmodule Logdna.Log do
   defp aggregate({:pid, pid}, aggregation) do
     value = inspect(pid)
     Map.put(aggregation, :pid, value)
+  end
+  defp aggregate({:gl, pid}, aggregation) do
+    value = inspect(pid)
+    Map.put(aggregation, :gl, value)
   end
   defp aggregate({key, value}, aggregation) do
     Map.put(aggregation, key, value)
