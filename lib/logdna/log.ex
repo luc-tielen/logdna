@@ -44,13 +44,9 @@ defmodule Logdna.Log do
     Enum.reduce(metadata, %{}, &aggregate/2)
   end
 
-  defp aggregate({:pid, pid}, aggregation) do
+  defp aggregate({key, pid}, aggregation) when key in [:pid, :gl, :mfa, :module] do
     value = inspect(pid)
-    Map.put(aggregation, :pid, value)
-  end
-  defp aggregate({:gl, pid}, aggregation) do
-    value = inspect(pid)
-    Map.put(aggregation, :gl, value)
+    Map.put(aggregation, key, value)
   end
   defp aggregate({key, value}, aggregation) do
     Map.put(aggregation, key, value)
